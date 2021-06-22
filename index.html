@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="css/maps.js"></script>
+     <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_TGfZCxNPt9rtIiOKfaLqm");
+            emailjs.send("gmail", "Duke Moyo Template", {
+                name: "Duke Moyo Code Institute",
+                notes: "The project that I want is..."
+            })
+        })();
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <form action="#" onsubmit="return sendMail(this);" method="POST"> 
+                    <div class="email">
+                        <div class="text">Email</div>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="msg">
+                    <div class="text">Message</div>
+                    <textarea rows="2" cols="25" required></textarea>
+                </div>
+
+            <div class="btn">
+                <button href="#" target="_blank" type="submit">send</button>
+            </div>
+        </form>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKk6sTxq7G8W-A8upY7a5szx-MtI-kKAY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+    <script src="css/emailjs.js"></script>
+  </body>
+</html>
